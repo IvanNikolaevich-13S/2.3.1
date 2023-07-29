@@ -17,7 +17,7 @@ Id пользователя:
 Фамилия пользователя:
 <span th:text="${user.getSurname()}"></span>
 <br>
-<br>
+
 <hr>
 <form th:method="GET" th:action="@{/users/{id}/edit(id = ${user.getId()})}">
     <input type="submit" value="Редактировать пользолвателя">

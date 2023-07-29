@@ -1,6 +1,10 @@
 package com.shvayko.crud.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -9,12 +13,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "first_name")
+    @NotNull(message="Имя должно быть заполнено!")
+    @Pattern(regexp = "^[A-ZА-Я][a-zа-я]*$", message = "Вы ввели неккоретное значение!")
     private String name;
 
     @Column(name= "last_name")
+    @NotNull(message="Фамилия должна быть заполнена!")
+    @Pattern(regexp = "^[A-ZА-Я][a-zа-я]*$", message = "Вы ввели неккоретное значение!")
     private String surname;
 
     public User(){
