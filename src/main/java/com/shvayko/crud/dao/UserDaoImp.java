@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Component
+
 @Repository
 public class UserDaoImp implements UserDao{
 
